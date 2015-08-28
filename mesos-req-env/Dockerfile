@@ -1,8 +1,6 @@
 FROM xdevelsistemas/centos-env:node-env
 MAINTAINER Clayton Santos da Silva <clayton@xdevel.com.br>
 
-#install mesos
-RUN rpm -i http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm && yum -y install mesos-0.23.0
 #install java
 ENV JDK_VERSION 8u60
 ENV JDK_BUILD_VERSION b27
