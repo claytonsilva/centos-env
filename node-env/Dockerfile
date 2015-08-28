@@ -13,6 +13,7 @@ RUN yum -y install nodejs npm bzip2 gcc gcc-c++ make openssl-devel && \
 RUN npm install --global npm@latest
 #install phantomjs + casperjs + bower + grunt-cli +  forever
 RUN node -v && \
+    npm install -g coffee-script node-gyp && \
     npm install -g phantomjs && \
     npm install -g casperjs && \
     npm install -g bower && \
