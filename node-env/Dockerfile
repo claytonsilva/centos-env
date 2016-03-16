@@ -3,15 +3,17 @@ FROM xdevelsistemas/centos-env:latest
 
 
 #install npm
-#RUN curl --silent --location https://rpm.nodesource.com/setup_4.x | bash - \ 
+RUN curl --silent --location https://rpm.nodesource.com/setup_4.x | bash - && yum remove -y nodejs 
 RUN     yum -y install nodejs npm bzip2 gcc gcc-c++ make openssl-devel && \
 #install awscli
-    yum install -y python-pip git && \
+    yum install -y wget git && \
+    wget -c https://bootstrap.pypa.io/get-pip.py && \
+    python get-pip.py && \
     pip install --upgrade pip && \
     pip install awscli
 
 #latest npm
-RUN npm install --global npm@latest
+#RUN npm install --global npm@latest
 #install phantomjs + casperjs + bower + grunt-cli +  forever
 RUN node -v && \
     npm install -g coffee-script node-gyp && \
@@ -22,3 +24,4 @@ RUN node -v && \
     npm install -g forever
 
 CMD ["bash"]
+
