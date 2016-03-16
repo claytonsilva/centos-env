@@ -3,7 +3,8 @@ FROM xdevelsistemas/centos-env:latest
 
 
 #install npm
-RUN yum -y install nodejs npm bzip2 gcc gcc-c++ make openssl-devel && \
+RUN curl --silent --location https://rpm.nodesource.com/setup_4.x | bash - \ 
+    && yum -y install nodejs npm bzip2 gcc gcc-c++ make openssl-devel && \
 #install awscli
     yum install -y python-pip git && \
     pip install --upgrade pip && \
