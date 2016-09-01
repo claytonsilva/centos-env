@@ -22,6 +22,9 @@ RUN node -v && \
     npm install -g bower && \
     npm install -g grunt-cli && \
     npm install -g forever
+    npm install -g typescript
+    npm install -g typings
+    npm install -g gulp-cli
 
 CMD ["bash"]
 
